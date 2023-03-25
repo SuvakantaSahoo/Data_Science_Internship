@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Short URL{% endblock %}
+
+{% block content %}
+    
+   <h3>New URL : {{ url_for('redirection',short_url=new_url,_external=True)}}</h3>
+   <a href="{{url_for('home')}}">
+    <button type="button" class="btn btn-success ">Back to Home</button>
+   </a>
+
+{% endblock %}
+
+

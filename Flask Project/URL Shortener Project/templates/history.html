@@ -1,0 +1,27 @@
+{% block content %}
+
+<table>
+  <thead>
+    <tr>
+      <th>Original URL</th>
+      <th>Short URL</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    {% for url in vals %}
+    <tr>
+      <td>{{ url.long }}</td>
+      <td>
+        {{ url_for('redirection', short_url=url.short, _external=True) }}
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table><br><br>
+
+<a href="{{url_for('home')}}">
+    <button type="button" class="btn btn-success ">Back to Home</button>
+</a>
+
+{% endblock %}
